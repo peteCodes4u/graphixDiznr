@@ -7,7 +7,16 @@ const questions = [
     {
         type: "input",
         name: "logoTxt",
-        message: "Please enter the text to use for the logo (3 character max) "
+        message: "Please enter the text to use for the logo (3 character max)"
+    },
+
+    // color
+    {
+
+        type: "input",
+        name: "logoColor",
+        message: "Please enter the color to use for the logo"
+
     },
 
     // shape selection
@@ -33,7 +42,7 @@ const generateLogo = function (answers) {
 
     return `${answers.logoTxt}
     ${answers.logoShape}
-    
+    ${answers.logoColor}
     `
 
 };
@@ -51,7 +60,7 @@ function init() {
         inquirer.prompt(questions).then((answers) => {
 
             const logoContent = generateLogo(answers);
-            publishLogo('New-Logo.svg', logoContent)
+            publishLogo('logo.svg', logoContent)
 
         })
 }
