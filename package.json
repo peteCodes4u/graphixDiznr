@@ -29,5 +29,8 @@
   "homepage": "https://github.com/peteCodes4u/graphixDiznr#readme",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4"
   }
 }
