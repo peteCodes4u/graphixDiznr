@@ -1,0 +1,33 @@
+{
+  "name": "graphixdiznr",
+  "version": "1.0.0",
+  "description": "Application to dynamically genrate .svg image files based on user input.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peteCodes4u/graphixDiznr.git"
+  },
+  "keywords": [
+    "logo",
+    ".svg",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Peter Smith (peteCodes4u)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peteCodes4u/graphixDiznr/issues"
+  },
+  "homepage": "https://github.com/peteCodes4u/graphixDiznr#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
