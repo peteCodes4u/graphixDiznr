@@ -1,3 +1,4 @@
-<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="150,0 300,200 0,200"/>
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg" fill= "purple">
+  <polygon points="150, 18 244, 182 56, 182"/>
+  <text font-family="Calibri" x="150" y="170" font-size="90" font-weight="bold" fill="white" stroke= "black" stroke-width="3" text-anchor="middle"><![CDATA[PJS]]></text>
 </svg>
