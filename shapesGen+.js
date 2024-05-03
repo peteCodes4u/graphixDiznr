@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
-const Circle = require('./lib/shapes');
-const Square = require('./lib/shapes') 
+const { Circle, Square, Triangle, Heart }= require('./lib/shapes');
 
 const questions = [
     // logo text
@@ -24,6 +23,8 @@ const questions = [
         message: "Please enter the color to use for the logo"
     },
 ];
+
+
 
 // function to write .svg file
 const publishLogo = (fileName, data) => {
@@ -49,7 +50,10 @@ function generateShape(logoShape) {
     if (logoShape == 'Circle') {
         imgShape = new Circle(50, 50, 50);
     } else {
-        if(logoShape == 'Square'){imgShape = new Square(10, 10, 100, 100)}
+        if(logoShape == 'Square'){imgShape = new Square(10, 10, 100, 100)} else {
+            if(logoShape =='Triangle') {imgShape = new Triangle(150, 18, 244, 182, 56, 182)
+            } else { if(logoShape == 'Heart') {imgShape = new Heart ("M 10, 30 a 20,20 0,0,1 40,0 a 20,20 0,0,1 40,0 Q 90,60 50,90 Q 10,60 10,30 z")}}
+        }
     }
     return imgShape;
 };
