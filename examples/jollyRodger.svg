@@ -1,9 +1,5 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="542.000000pt" height="682.000000pt" viewBox="0 0 542.000000 682.000000"
- preserveAspectRatio="xMidYMid meet">
+ width="542.000000pt" height="682.000000pt" viewBox="0 0 542.000000 682.000000" fill="aqua">
 
 <g transform="translate(0.000000,682.000000) scale(0.100000,-0.100000)">
 <path d="M2480 6414 c-232 -29 -542 -144 -736 -274 -214 -144 -409 -346 -512
@@ -43,4 +39,6 @@ c149 -36 269 -129 311 -240 20 -51 22 -75 19 -161 -3 -92 -6 -106 -34 -150
 c-213 106 -582 302 -709 375 -263 155 -310 203 -379 393 -48 134 -94 217 -146
 264 -74 67 -186 103 -269 86z"/>
 </g>
+<text font-family="Calibri" x="270" y="555" font-size="155" font-weight="bold" fill="white" stroke= "black" stroke-width="5" text-anchor="middle"><![CDATA[PJS]]></text>
+
 </svg>
