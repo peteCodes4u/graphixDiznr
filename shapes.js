@@ -40,8 +40,8 @@ function generateShape(logoShape) {
     const squareHeader = '<svg xmlns="http://www.w3.org/2000/svg">'
     const triangleHeader = '<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">'
     const skullHeader = '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 542.000000 682.000000"><g transform="translate(0.000000,682.000000) scale(0.100000,-0.100000)">'
-    const birdHeader = '<svg version="1.0" xmlns="http://www.w3.org/2000/svg"width="300" height="200" viewBox="0 0 262.000000 243.000000">'
-    const handsHeader = '<svg xmlns="http://www.w3.org/2000/svg"width="300" height="200" viewBox="0 0 300.000000 200.000000">'
+    const birdHeader = '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 262.000000 243.000000">'
+    const handsHeader = '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300.000000 200.000000">'
 
     if (logoShape == 'Circle') {
         imgShape = circleHeader + '<circle cx="100" cy="100" r="66.6" />'
