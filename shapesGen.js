@@ -12,6 +12,7 @@ const questions = [
     },
 ];
 
+
 // function to write .svg file
 const publishLogo = (fileName, data) => {
 
@@ -45,8 +46,6 @@ function generateShape(logoShape) {
 
     if (logoShape == 'Circle') {
         imgShape = circleHeader + '<circle cx="100" cy="100" r="66.6" />'
-
-
     } else {
         if (logoShape == 'Square') {
             imgShape = squareHeader + '<rect x="10" y="10" width="300" height="200"/>'
@@ -69,7 +68,6 @@ function generateShape(logoShape) {
                         }
                     }
                 }
-
             }
         }
     }
