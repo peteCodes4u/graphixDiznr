@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
-const Circle = require('./lib/shapes')
+const Circle = require('./shapes')
 
 const questions = [
 
