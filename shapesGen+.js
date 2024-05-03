@@ -12,6 +12,23 @@ const questions = [
     },
 ];
 
+// circle
+class Circle {
+    constructor(cx, cy, r) {
+
+        this.cx = cx;
+        this.cy = cy;
+        this.r = r;
+
+    }
+
+    render() {
+        return `<circle cx="${this.cx}" cy="${this.cy}" r="${this.r}"/>`
+    }
+
+}
+
+
 // function to write .svg file
 const publishLogo = (fileName, data) => {
 
@@ -26,6 +43,7 @@ const generateLogo = function (answers) {
 
     const shape = generateShape(answers.logoShape);
 
+
     return `
     ${shape}
     </svg>
@@ -36,17 +54,8 @@ const generateLogo = function (answers) {
 function generateShape(logoShape) {
 
     let imgShape = '';
-    const circleHeader = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">'
-    const squareHeader = '<svg xmlns="http://www.w3.org/2000/svg">'
-    const triangleHeader = '<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">'
-    const skullHeader = '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 542.000000 682.000000"><g transform="translate(0.000000,682.000000) scale(0.100000,-0.100000)">'
-    const birdHeader = '<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 262.000000 243.000000">'
-    const handsHeader = '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300.000000 200.000000">'
-
     if (logoShape == 'Circle') {
-        imgShape = circleHeader + '<circle cx="100" cy="100" r="66.6" />'
-
-
+        imgShape = new Circle (50,50,50)
     } else {
         if (logoShape == 'Square') {
             imgShape = squareHeader + '<rect x="10" y="10" width="300" height="200"/>'
@@ -69,7 +78,6 @@ function generateShape(logoShape) {
                         }
                     }
                 }
-
             }
         }
     }
