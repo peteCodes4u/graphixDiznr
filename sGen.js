@@ -36,9 +36,41 @@ const publishLogo = (fileName, data) => {
 // function to generate logo
 const generateLogo = function (answers) {
     const shape = generateShape(answers.logoShape);
+    let shapeHeader = ''
+    const circleHeader = 'viewBox="0 0 200 300">';
+    const squareHeader = null;
+    const triangleHeader = 'width="300" height="200"';
+    const heartHeader = null;
+    const skullHeader = `${triangleHeader} viewBox="0 0 542.000000 682.000000"`;
+    const birdHeader = `${triangleHeader} viewBox="0 0 262.000000 243.000000"`;
+    const handsHeader = `${triangleHeader} viewBox="0 0 300.000000 200.000000"`;
+
+    if (shape == "Circle") {
+        shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${circleHeader}>`
+    } else {
+        if (shape == "Square") {
+            shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${squareHeader}>`
+        } else {
+            if (shape == "Triangle") {
+                shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${triangleHeader}>`
+            } else {
+                if (shape == "Heart") {
+                    shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${heartHeader}>`
+                } else {
+                    if (shape == "Hands") {
+                        shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${handsHeader}>`
+                    } else {
+                        if (shape == "Bird") {
+                            shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${birdHeader}>`
+                        } else { if (shape == "Skull") { shapeHeader = `<svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg" ${skullHeader}>` } }
+                    }
+                }
+            }
+        }
+    }
 
     return `
-        <svg fill="${answers.logoColor}" xmlns="http://www.w3.org/2000/svg">
+            ${shapeHeader}
             ${shape.render()}
             <![CDATA[${answers.logoTxt}]]></text>
         </svg>
@@ -135,7 +167,8 @@ function init() {
     // prompt for user input
     inquirer.prompt(questions).then((answers) => {
         const logoContent = generateLogo(answers);
-        publishLogo(`logo.svg`, logoContent);
+        const fileName = answers.logoTxt;
+        publishLogo(`${fileName}.svg`, logoContent);
     });
 }
 
