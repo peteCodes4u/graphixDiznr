@@ -90,8 +90,10 @@ function init() {
     // prompt for user input
     inquirer.prompt(questions).then((answers) => {
         const logoContent = generateLogo(answers);
-        let logoName = answers.logoTxt;
-        publishLogo(`${logoName}.svg`, logoContent);
+        // let logoName = answers.logoTxt;
+        // publishLogo(`${logoName}.svg`, logoContent);
+
+        publishLogo(`logo.svg`, logoContent);
     });
 }
 
