@@ -24,8 +24,6 @@ const questions = [
     },
 ];
 
-
-
 // function to write .svg file
 const publishLogo = (fileName, data) => {
     fs.writeFile(fileName, data, (err) => {
@@ -94,13 +92,9 @@ function init() {
     }
 
     helpfulHint();
-
     // prompt for user input
     inquirer.prompt(questions).then((answers) => {
         const logoContent = generateLogo(answers);
-        // let logoName = answers.logoTxt;
-        // publishLogo(`${logoName}.svg`, logoContent);
-
         publishLogo(`logo.svg`, logoContent);
     });
 }
