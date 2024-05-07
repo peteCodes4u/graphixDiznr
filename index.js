@@ -37,12 +37,9 @@ const publishLogo = (fileName, data) => {
 const generateLogo = function (answers) {
     const shape = generateShape(answers.logoShape);
 
-    return `
-        <svg fill="${answers.logoColor}" 
-            ${shape.render()}
-            <![CDATA[${answers.logoTxt}]]></text>
-        </svg>
-    `;
+    return `<svg fill="${answers.logoColor}" 
+${shape.render()}
+<![CDATA[${answers.logoTxt}]]></text></svg>`;
 };
 
 // shape logic function
@@ -93,7 +90,8 @@ function init() {
     // prompt for user input
     inquirer.prompt(questions).then((answers) => {
         const logoContent = generateLogo(answers);
-        publishLogo(`logo.svg`, logoContent);
+        let logoName = answers.logoTxt;
+        publishLogo(`${logoName}.svg`, logoContent);
     });
 }
 
