@@ -2,13 +2,16 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const { Circle, Square, Triangle, Heart, Hands, Skull, Bird, Mercury, Spiral } = require('./lib/shapes');
 
+// Inquirer questions
 const questions = [
+
     // logo text
     {
         type: "input",
         name: "logoTxt",
         message: "Please enter the text to use for the logo (3 character max)"
     },
+
     // shape selection
     {
         type: "list",
@@ -16,6 +19,7 @@ const questions = [
         message: "Please select the shape for this logo",
         choices: ["Circle", "Square", "Triangle", "Heart", "Hands", "Bird", "Skull", "Mercury", "Spiral"],
     },
+
     // color
     {
         type: "input",
@@ -27,7 +31,7 @@ const questions = [
 // function to write .svg file
 const publishLogo = (fileName, data) => {
     fs.writeFile(fileName, data, (err) => {
-        if (err) { console.log(err) } else { console.log("logo successfully generated enjoy!") }
+        if (err) { console.log(err) } else { console.log("Generated logo.svg enjoy!") }
     });
 };
 
