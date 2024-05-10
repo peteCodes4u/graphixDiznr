@@ -1,5 +1,0 @@
-<svg fill="LimeGreen" 
- width="300" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<path d="M 10, 30 a 20,20 0,0,1 40,0 a 20,20 0,0,1 40,0 Q 90,60 50,90 Q 10,60 10,30 z" /><text font-family="Calibri" x="50" y="60" font-size="40" font-weight="bold" 
-style="stroke: black;" fill="#FFF" text-anchor="middle">
-<![CDATA[HRT]]></text></svg>

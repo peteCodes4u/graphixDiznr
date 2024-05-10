@@ -28,6 +28,13 @@ const questions = [
         maxLength: 3
     },
 
+    // text color
+    {
+        type: "input",
+        name: "textColor",
+        message: "Please enter the text color to use for the logo"
+    },
+
     // shape selection
     {
         type: "list",
@@ -53,9 +60,57 @@ const publishLogo = (fileName, data) => {
     });
 };
 
+// function apply text properties based on shape
+const applyTextProps = function (logoShape){
+
+    let textProps = '';
+    
+    if (logoShape == 'Circle') {
+        textProps = 'font-family="Calibri" x="50" y="65" font-size="48" font-weight="bold" stroke="black" text-anchor="middle">';
+    } else {
+        if (logoShape == 'Square') {
+            textProps = 'font-family="Calibri" x="60" y="80" font-size="55" font-weight="bold" stroke= "black" stroke-width="3" text-anchor="middle">'
+        }
+        else {
+            if (logoShape == 'Triangle') {
+                textProps = 'font-family="Calibri" x="150" y="145" font-size="75" font-weight="bold" stroke= "black" stroke-width="3" text-anchor="middle">'
+            } else {
+                if (logoShape == 'Heart') {
+                    textProps = 'font-family="Calibri" x="50" y="60" font-size="40" font-weight="bold" style="stroke: black;" text-anchor="middle">'
+                } else {
+                    if (logoShape == 'Hands') {
+                        textProps = 'font-family="Calibri" x="150" y="120" font-size="55" font-weight="bold" style="stroke: black;" text-anchor="middle">'
+                    } else {
+                        if (logoShape == 'Skull') {
+                            textProps = 'font-family="Calibri" x="270" y="555" font-size="155" font-weight="bold" stroke= "black" stroke-width="5" text-anchor="middle">'
+                        } else {
+                            if (logoShape == 'Bird') {
+                                textProps = 'font-family="Calibri" x="170" y="135" font-size="55" font-weight="bold" style="stroke: black;" text-anchor="middle">'
+                            } else {
+                                if (logoShape == 'Mercury') {
+                                    textProps = 'font-family="Calibri" x="100" y="60" font-size="50" font-weight="bold" stroke= "black" stroke-width="2" text-anchor="middle">'
+                                } else {
+                                    if (logoShape == 'Spiral') {
+                                        textProps = 'font-family="Calibri" x="105" y="125" font-size="100" font-weight="bold" stroke= "black" stroke-width="2" text-anchor="middle">'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return textProps;
+
+
+}
+
 // function to generate logo
 const generateLogo = function (answers) {
     const shape = generateShape(answers.logoShape);
+    const txtProps = applyTextProps(answers.logoShape);
+
     let text = answers.logoTxt
 
     // pete's no-no words (I simply won't allow it, not today SATAN!)
@@ -71,16 +126,16 @@ const generateLogo = function (answers) {
 
     return `<svg fill="${answers.logoColor}" 
 ${shape.render()}
+<text fill="${answers.textColor}" ${txtProps}
 <![CDATA[${text}]]></text></svg>`;
 };
 
 // shape logic function
 function generateShape(logoShape) {
     let imgShape = '';
-
-
+   
     if (logoShape == 'Circle') {
-        imgShape = new Circle(50, 50, 50);
+        imgShape = new Circle(50, 50, 50)
     } else {
         if (logoShape == 'Square') {
             imgShape = new Square(10, 10, 100, 100)
