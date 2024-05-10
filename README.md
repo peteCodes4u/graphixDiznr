@@ -17,6 +17,11 @@ In order to use this application install node.js and  npm. If node.js is already
 ## Usage Information
 The intended usage for this app is to generate .svg image files that can be used for project logos. In order to run this application after npm has been installed, enter "npm start" in the command terminal.
 
+## Link to Walktrhough Video
+https://drive.google.com/file/d/1uvmU0X4RrBPax0viO6zCMeRuYFOE9Uy3
+
+![](./assets/grfxDznr_Walktrhough.gif)
+
 ## License
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
