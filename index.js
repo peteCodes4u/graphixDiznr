@@ -5,6 +5,18 @@ inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 const fs = require('fs');
 const { Circle, Square, Triangle, Heart, Hands, Skull, Bird, Mercury, Spiral } = require('./lib/shapes');
 
+// array for logo text that is restricted
+const unacceptableText = 
+[
+    'KKK', 'kkk', 'Kkk', 'KKk', 'kkK', 'kKk', 'KkK', 'kKK',
+    'FAG', 'fag', 'Fag', 'FAg', 'faG', 'fAg', 'FaG', 'fAG',
+    'HSN', 'hsn', 'Hsn', 'HSn', 'hSN', 'hsN', 'hSn', 'HsN', 
+    'ROA', 'roa', 'ROa', 'roA', 'Roa', 'rOA', 'RoA', 'rOa', 
+    'SWP', 'swp', 'SWp', 'swP', 'Swp', 'sWP', 'SwP', 'sWp', 
+    'ZOG', 'zog', 'ZOg', 'zoG', 'Zog', 'zOG', 'ZoG', 'zOg',
+    '311', '511', '737' 
+]
+
 // Inquirer questions
 const questions = [
 
@@ -34,8 +46,10 @@ const questions = [
 
 // function to write .svg file
 const publishLogo = (fileName, data) => {
+
+    const green = '\x1b[32m%s\x1b[0m';
     fs.writeFile(fileName, data, (err) => {
-        if (err) { console.log(err) } else { console.log("Generated logo.svg enjoy!") }
+        if (err) { console.log(err) } else { console.log( green, "✨ Generated logo.svg enjoy! ✨") }
     });
 };
 
@@ -44,16 +58,15 @@ const generateLogo = function (answers) {
     const shape = generateShape(answers.logoShape);
     let text = answers.logoTxt
 
-    const unacceptableText = 
-    [
-        'KKK', 'kkk', 'Kkk', 'KKk', 'kkK', 'kKk', 'KkK', 'kKK',
-        'FAG', 'fag', 'Fag', 'FAg', 'faG', 'fAg', 'FaG', 'fAG',
-        
-    ]
-
     // pete's no-no words (I simply won't allow it, not today SATAN!)
     unacceptableText.forEach(item => {
-        if(text == item){ text = 'FU!'}
+
+        // constant to set terminal output to red
+        const red = '\x1b[31m%s\x1b[0m';
+        if(text == item){ 
+            text = 'NO!'
+            console.log( red, '💀 The characters entered may have an unitended alternate meaning, so they have been disallowed. For more details see https://en.wikipedia.org/wiki/List_of_symbols_designated_by_the_Anti-Defamation_League_as_hate_symbols 💀')
+        }
     });
 
     return `<svg fill="${answers.logoColor}" 
@@ -107,9 +120,11 @@ function generateShape(logoShape) {
 
 // initialize function
 function init() {
+    // const for yellow terminal message
+    yellow = '\x1b[33m%s\x1b[0m';
     // helpful hint to quit application
     const helpfulHint = () => {
-        console.log("Helpful hint - to quit this app anytime press ctrl + c")
+        console.log(yellow, "🤓 Helpful hint - to quit this app anytime press ctrl + c 🤓")
     }
 
     helpfulHint();
@@ -124,5 +139,7 @@ init();
 
 module.exports = {
     generateShape,
-    generateLogo
+    generateLogo, 
+    unacceptableText 
 };
+
