@@ -14,11 +14,14 @@ The GraphixDznr app dynamically generates 300px x 200px .svg images based on use
 ## Installation Instructions
 In order to use this application install node.js and  npm. If node.js is already installed,  npm can be installed using the "npm install" command in the terminal. Once npm is installed, a user can launch the application by entering "npm start" in the command terminal. To run the unititests that are also maintained in this project enter "npm test" in the command terminal.
 
+## Detailed Instructions
+- step 1. clone the repository
+- step 2. using a terminal window install npm by executing the following command "npm install"
+- step 3. using a terminal window the app can be run using the "npm start" command.
+- link to demo video: https://drive.google.com/file/d/1uvmU0X4RrBPax0viO6zCMeRuYFOE9Uy3
+
 ## Usage Information
 The intended usage for this app is to generate .svg image files that can be used for project logos. In order to run this application after npm has been installed, enter "npm start" in the command terminal.
-
-## Link to Walktrhough Video
-https://drive.google.com/file/d/1uvmU0X4RrBPax0viO6zCMeRuYFOE9Uy3
 
 ![](./assets/grfxDznr_Walktrhough.gif)
 
