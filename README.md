@@ -1,4 +1,4 @@
-# GraphixDiznr
+# GrfxDznr
 
 ## Description
 The GraphixDznr app dynamically generates 300px x 200px .svg images based on user input that is collected via Inquirer leveraging node.js and npm. 
